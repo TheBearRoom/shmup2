@@ -18,38 +18,11 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = Vector2.zero;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        rb.MovePosition(mousePosition); 
 
-        Vector2 dir = rb.velocity;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            dir.x = -1;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            dir.x = 1;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            dir.y = 1;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            dir.y = -1;
-        }
-
-        rb.velocity = dir * speed;
-
-        if (rb.velocity != Vector2.zero)
-        {
-            transform.right = rb.velocity;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             GameObject go = Instantiate(
                 bullet,
