@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
     public float speed = 5;
 
     public GameObject bullet;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 100;
 
     private Rigidbody2D rb;
 
