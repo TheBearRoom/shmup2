@@ -10,7 +10,7 @@ public class bullet2 : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 5); 
+        Destroy(gameObject, 2); 
     }
 
     void Update()

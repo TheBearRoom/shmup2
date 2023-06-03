@@ -12,13 +12,13 @@ public class gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = (transform.localRotation * Vector2.right).normalized;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        direction = (transform.localRotation * Vector2.right).normalized;
     }
 
     public void Shoot()
