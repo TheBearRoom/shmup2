@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 5;
-
-    public GameObject bullet;
-    public float bulletSpeed = 100;
+    gun[] guns;
+    bool shoot;
 
     private Rigidbody2D rb;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        guns = transform.GetComponentsInChildren<gun>();
     }
 
     void Update()
@@ -21,16 +22,14 @@ public class Move : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         rb.MovePosition(mousePosition); 
 
-
-        if (Input.GetMouseButtonDown(0))
+        shoot = Input.GetMouseButtonDown(0);
+        if (shoot)
         {
-            GameObject go = Instantiate(
-                bullet,
-                transform.position,
-                transform.rotation);
-
-            go.GetComponent<Rigidbody2D>().velocity =
-                transform.right.normalized * bulletSpeed;
+            shoot = false;
+            foreach (gun gun in guns)
+            {
+                gun.Shoot();
+            }
         }
     }
 }
