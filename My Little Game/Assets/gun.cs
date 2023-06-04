@@ -9,11 +9,11 @@ public class gun : MonoBehaviour
     public bullet2 bullet;
     Vector2 direction;
 
-    bool autoshoot = false;
-    float firingSpeed = 0.5f;
-    float ShootDelay = 2.0f;
-    float shootTimer = 0f;
-    float deleyTimer = 0f;
+    public bool autoshoot = false;
+    public float firingSpeed = 0.5f;
+    public float ShootDelaySeconds = 2.0f;
+    public float shootTimer = 0f;
+    public float deleyTimer = 0f;
 
 
 
@@ -28,6 +28,26 @@ public class gun : MonoBehaviour
     void Update()
     {
         direction = (transform.localRotation * Vector2.right).normalized;
+
+        if (autoshoot)
+        {
+            if (deleyTimer >= ShootDelaySeconds) 
+            { 
+                if (shootTimer >= firingSpeed)
+                {
+                    Shoot();
+                    shootTimer = 0;
+                }
+                else
+                {
+                    shootTimer += Time.deltaTime;
+                }
+            }
+            else
+            {
+                deleyTimer += Time.deltaTime;
+            }
+        }
     }
 
     public void Shoot()
