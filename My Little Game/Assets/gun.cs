@@ -9,6 +9,15 @@ public class gun : MonoBehaviour
     public bullet2 bullet;
     Vector2 direction;
 
+    bool autoshoot = false;
+    float firingSpeed = 0.5f;
+    float ShootDelay = 2.0f;
+    float shootTimer = 0f;
+    float deleyTimer = 0f;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {

@@ -1,0 +1,10 @@
+if (Input.GetMouseButtonDown(0))
+        {
+            GameObject go = Instantiate(
+                bullet,
+                transform.position,
+                transform.rotation);
+
+            go.GetComponent<Rigidbody2D>().velocity =
+                transform.right.normalized * bulletSpeed;
+        }
