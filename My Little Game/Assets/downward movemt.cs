@@ -13,7 +13,11 @@ public class downwardmovemt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < -45f)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void FixedUpdate()

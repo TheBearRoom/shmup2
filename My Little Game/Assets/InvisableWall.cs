@@ -23,7 +23,6 @@ public class InvisableWall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bullet_class bullet = collision.GetComponent<bullet_class>();
-        Debug.Log("wallhit");
         Destroy(bullet);
     }
 }
