@@ -1055,7 +1055,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
-  destructableScript: {fileID: 0}
 --- !u!4 &1549980110362036415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2056404027371744301, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
@@ -1113,9 +1112,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5495466251775824595, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
+      propertyPath: deleyTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495466251775824595, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
+      propertyPath: shootTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495466251775824595, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
+      propertyPath: firingSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495466251775824595, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
+      propertyPath: ShootDelaySeconds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6028494188566882210, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
       propertyPath: m_Name
       value: enemy type 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128459366487939559, guid: 5a161920a58b400418a1fa4418f3f70c, type: 3}
+      propertyPath: firingSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

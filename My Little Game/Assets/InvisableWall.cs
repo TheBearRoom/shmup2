@@ -17,7 +17,8 @@ public class InvisableWall : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) 
+    //Det här fungerar inte tror jag, orkar inte ta bort de nu ifallall det har sönder något. (Jag skriver de här kommentarerna rätt så sent)
     {
         bullet_class bullet = collision.GetComponent<bullet_class>();
         Destroy(bullet);

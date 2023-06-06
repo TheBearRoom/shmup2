@@ -7,14 +7,13 @@ using UnityEngine;
 public class destructable : MonoBehaviour
 {
     public bool spawned = false;
-    bool spawnCheck = true;
-    public int scoreWorth = 10;
+    public int scoreWorth = 10; //defult värde för hur mycket score en fiende med
 
 
     // Start is called before the first frame update
     void Start()
     {
-        levelChanger.instance.addEnemie();
+        levelChanger.instance.addEnemie(); //säger till levelChanger att det finns en till fiende
     }
 
     // Update is called once per frame
@@ -26,12 +25,12 @@ public class destructable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bullet_class bullet = collision.GetComponent<bullet_class>();
-        if (bullet != null)
+        if (bullet != null) //förhindrar duplicate händelser
         {
 
-            if (!bullet.enemyBullet)
+            if (!bullet.enemyBullet) //är det det en playerbullet?
             {
-                levelChanger.instance.increaseScore(scoreWorth);
+                levelChanger.instance.increaseScore(scoreWorth); //skicka min score till LevelChanger
                 Destroy(gameObject);
                 Destroy(bullet.gameObject);
             }
@@ -41,7 +40,7 @@ public class destructable : MonoBehaviour
 
     private void OnDestroy()
     {
-       levelChanger.instance.removeEnemie();
+       levelChanger.instance.removeEnemie(); //ta bort mig från enime count i LevelChanger
     }
 
 }

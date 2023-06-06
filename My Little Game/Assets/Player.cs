@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    gun[] guns;
+    gun[] guns; //lägger till alla guns i classen gun för alla guns
     bool shoot;
-    bool isHit = false; // Flag to track if the player is hit
 
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        guns = transform.GetComponentsInChildren<gun>();
+        guns = transform.GetComponentsInChildren<gun>(); //guns är alla guns i classen gun skapad i rad 7
     }
 
     void Update()
     {
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rb.MovePosition(mousePosition);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //fethca muspostion
+        rb.MovePosition(mousePosition); //flyta ´player till mus
 
-        shoot = Input.GetMouseButtonDown(0);
-        if (shoot)
+        shoot = Input.GetMouseButtonDown(0); //mouse_left är shoot
+        if (shoot) 
         {
-            shoot = false;
-            foreach (gun gun in guns)
+            shoot = false; //du behöver trycka igen för varje gång du vill ha shoot
+            foreach (gun gun in guns) //säg det här 5 gånger snabt lol
             {
-                gun.Shoot();
+                gun.Shoot(); //skut en gång för varje gun jag hittar i classen gun i fileden gun
             }
         }
     }
@@ -36,20 +35,20 @@ public class Move : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bullet_class bullet = collision.GetComponent<bullet_class>();
-        if (bullet != null)
+        if (bullet != null) //förhindrar duplicate händelser
         {
-            if (bullet.enemyBullet)
+            if (bullet.enemyBullet) 
             {
-                Destroy(gameObject);
-                Destroy(bullet.gameObject);
+                Destroy(gameObject); //döda spelaren
+                Destroy(bullet.gameObject); //trolla bort bullet som döda
             }
         }
 
-        destructable destructable = collision.GetComponent<destructable>();
-        if (destructable != null)
+        destructable destructable = collision.GetComponent<destructable>(); //koliderar jag med någon finede (destructable)
+        if (destructable != null) //förhindrar duplicate händelser
         {
-            Destroy(gameObject);
-            Destroy(destructable.gameObject);
+            Destroy(gameObject); //döda spelaren
+            Destroy(destructable.gameObject); //trolla bort bullet som döda
         }
     }
 }
