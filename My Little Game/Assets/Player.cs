@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 using UnityEngine;
 
 public class Move : MonoBehaviour
 {
     gun[] guns;
     bool shoot;
+    bool isHit = false; // Flag to track if the player is hit
 
     private Rigidbody2D rb;
-
 
     void Start()
     {
@@ -19,8 +18,9 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rb.MovePosition(mousePosition); 
+        rb.MovePosition(mousePosition);
 
         shoot = Input.GetMouseButtonDown(0);
         if (shoot)
@@ -30,6 +30,27 @@ public class Move : MonoBehaviour
             {
                 gun.Shoot();
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        bullet_class bullet = collision.GetComponent<bullet_class>();
+        Debug.Log("hit");
+        if (bullet != null)
+        {
+            if (bullet.enemyBullet)
+            {
+                Destroy(gameObject);
+                Destroy(bullet.gameObject);
+            }
+        }
+
+        destructable destructable = collision.GetComponent<destructable>();
+        if (destructable != null)
+        {
+            Destroy(gameObject);
+            Destroy(destructable.gameObject);
         }
     }
 }

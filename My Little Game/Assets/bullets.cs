@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet2 : MonoBehaviour
+public class bullet_class : MonoBehaviour
 {
     public float bullet_speed = 1;
     public Vector2 direction = new Vector2(1, 0);
     public Vector2 velocity;
+    public bool enemyBullet = false;
 
     void Start()
     {
-        Destroy(gameObject, 2); 
+        Destroy(gameObject, 4); 
     }
 
     void Update()

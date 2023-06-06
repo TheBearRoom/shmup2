@@ -6,7 +6,7 @@ public class gun : MonoBehaviour
 {
 
 
-    public bullet2 bullet;
+    public bullet_class bullet;
     Vector2 direction;
 
     public bool autoshoot = false;
@@ -52,8 +52,9 @@ public class gun : MonoBehaviour
 
     public void Shoot()
     {
+        Debug.Log("shoot");
         GameObject go = Instantiate(bullet.gameObject, transform.position, Quaternion.identity);
-        bullet2 gobullet = go.GetComponent<bullet2>();
+        bullet_class gobullet = go.GetComponent<bullet_class>();
         gobullet.direction = direction;
 
     }
