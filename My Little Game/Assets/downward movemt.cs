@@ -5,6 +5,7 @@ using UnityEngine;
 public class downwardmovemt : MonoBehaviour
 {
     public float moveSpeed = 5;
+    public destructable destructableScript;
     void Start()
     {
         
@@ -17,7 +18,7 @@ public class downwardmovemt : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        
     }
 
     private void FixedUpdate()

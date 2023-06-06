@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class destructable : MonoBehaviour
 {
-    Renderer m_Renderer;
+    public bool spawned = false;
+    bool spawnCheck = true;
+    public int scoreWorth = 10;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +25,18 @@ public class destructable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            bullet_class bullet = collision.GetComponent<bullet_class>();
-            if (bullet != null)
+        bullet_class bullet = collision.GetComponent<bullet_class>();
+        if (bullet != null)
+        {
+
+            if (!bullet.enemyBullet)
             {
-
-                if (!bullet.enemyBullet)
-                {
-                    Destroy(gameObject);
-                    Destroy(bullet.gameObject);
-                }
-
+                levelChanger.instance.increaseScore(scoreWorth);
+                Destroy(gameObject);
+                Destroy(bullet.gameObject);
             }
+
+        }
     }
 
     private void OnDestroy()

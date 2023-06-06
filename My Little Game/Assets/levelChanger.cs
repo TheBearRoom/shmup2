@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class levelChanger : MonoBehaviour
 {
@@ -11,12 +12,21 @@ public class levelChanger : MonoBehaviour
     bool StartNextLevel = false;
     float loadingTime = 1;
 
-    string[] levels = { "Level1", "Level2" }; //heter samma som scenerna heter
+    string[] levels = { "Level1", "Level2", "Level3"}; //heter samma som scenerna heter
     int currentLevel = 1;
+
+    int score = 0;
+    Text value;
 
     private void Awake() //gör allting inom scripted andvändbar med en gång
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            value = GameObject.Find("value").GetComponent<Text>();
+        }
+        
     }
 
 
@@ -56,6 +66,12 @@ public class levelChanger : MonoBehaviour
                 loadingTime -= Time.deltaTime;
             }
         }
+    }
+
+    public void increaseScore(int scoreWorth)
+    {
+        score += scoreWorth;
+        value.text = score.ToString();
     }
 
     public void addEnemie()
