@@ -12,6 +12,7 @@ public class bullet_class : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 4); 
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()

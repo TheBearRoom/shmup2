@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class destructable : MonoBehaviour
 {
-    Renderer m_Renderer;
+    public int scoreWorth = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class destructable : MonoBehaviour
 
                 if (!bullet.enemyBullet)
                 {
+                    levelChanger.instance.gotScore(scoreWorth);
                     Destroy(gameObject);
                     Destroy(bullet.gameObject);
                 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class levelChanger : MonoBehaviour
 {
@@ -9,25 +10,36 @@ public class levelChanger : MonoBehaviour
 
     uint N_Enemies = 0;
     bool StartNextLevel = false;
-    float loadingTime = 1;
+    float loadingTime = 3;
+    
+    int score = 0;
+    Text scoreText;
 
-    string[] levels = { "Level1", "Level2" }; //heter samma som scenerna heter
+    string[] levels = { "Level1", "Level2" };
     int currentLevel = 1;
 
-    private void Awake() //gör allting inom scripted andvändbar med en gång
+    private void Awake() 
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            scoreText = GameObject.Find("scoreText").GetComponent<Text>();
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
-
-    // Start is called before the first frame update
     void Start()
     {
       
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (StartNextLevel)
@@ -40,7 +52,7 @@ public class levelChanger : MonoBehaviour
                 if (currentLevel <= levels.Length)
                 {
                     Debug.Log("array");
-                    string sceneName = levels[currentLevel - 1]; //-1 för array, 
+                    string sceneName = levels[currentLevel - 1]; 
                     SceneManager.LoadSceneAsync(sceneName); //Async laddar nästa scene iförväg
 
                 }
@@ -48,7 +60,7 @@ public class levelChanger : MonoBehaviour
                 {
                     Debug.Log("WINNER WINNER CHIKEN DINNER");
                 }
-                loadingTime = 1;
+                loadingTime = 3;
                 StartNextLevel = false;
             }
             else
@@ -57,6 +69,7 @@ public class levelChanger : MonoBehaviour
             }
         }
     }
+
 
     public void addEnemie()
     {
@@ -72,5 +85,11 @@ public class levelChanger : MonoBehaviour
         {
             StartNextLevel = true;
         }
+    }
+
+    public void gotScore(int gotScore)
+    {
+        score += gotScore;
+        scoreText.text = gotScore.ToString();
     }
 }
