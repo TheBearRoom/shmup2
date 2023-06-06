@@ -36,7 +36,6 @@ public class Move : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bullet_class bullet = collision.GetComponent<bullet_class>();
-        Debug.Log("hit");
         if (bullet != null)
         {
             if (bullet.enemyBullet)
