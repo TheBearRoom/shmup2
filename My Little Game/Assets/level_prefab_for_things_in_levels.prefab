@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e6e3eb090fb3a40ababaf4e7c69851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunLevelRequierment: 0
   bullet: {fileID: 2979957566565099212, guid: 3c3acc8e2e49b8648a26525f70d0d0f6, type: 3}
   autoshoot: 0
   firingSpeed: 0.5
@@ -66,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &17543514939384043
 Transform:
   m_ObjectHideFlags: 0
@@ -94,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e6e3eb090fb3a40ababaf4e7c69851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunLevelRequierment: 2
   bullet: {fileID: 2979957566565099212, guid: 3c3acc8e2e49b8648a26525f70d0d0f6, type: 3}
   autoshoot: 0
   firingSpeed: 0.5
@@ -252,7 +254,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.4, y: 0.6}
+  m_Size: {x: 0.1, y: 0.27}
   m_Direction: 0
 --- !u!114 &6129675599589081904
 MonoBehaviour:
@@ -731,7 +733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3691709071789289448
 Transform:
   m_ObjectHideFlags: 0
@@ -759,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e6e3eb090fb3a40ababaf4e7c69851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunLevelRequierment: 1
   bullet: {fileID: 2979957566565099212, guid: 3c3acc8e2e49b8648a26525f70d0d0f6, type: 3}
   autoshoot: 0
   firingSpeed: 0.5
@@ -829,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2814267671943346082
 Transform:
   m_ObjectHideFlags: 0
@@ -857,6 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e6e3eb090fb3a40ababaf4e7c69851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunLevelRequierment: 1
   bullet: {fileID: 2979957566565099212, guid: 3c3acc8e2e49b8648a26525f70d0d0f6, type: 3}
   autoshoot: 0
   firingSpeed: 0.5
@@ -879,7 +883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3305720704693186643
 Transform:
   m_ObjectHideFlags: 0
@@ -907,6 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e6e3eb090fb3a40ababaf4e7c69851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunLevelRequierment: 2
   bullet: {fileID: 2979957566565099212, guid: 3c3acc8e2e49b8648a26525f70d0d0f6, type: 3}
   autoshoot: 0
   firingSpeed: 0.5

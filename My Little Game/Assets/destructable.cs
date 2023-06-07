@@ -31,9 +31,19 @@ public class destructable : MonoBehaviour
 
             if (!bullet.enemyBullet) //är det det en playerbullet?
             {
+                if (health >= 0 ) 
+                {
+                    Debug.Log("DEATH");
+                    levelChanger.instance.increaseScore(scoreWorth); //skicka min score till LevelChanger
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.Log("Hit");
+                    health--;
+                }
                 Destroy(bullet.gameObject);
-                levelChanger.instance.increaseScore(scoreWorth); //skicka min score till LevelChanger
-                Destroy(gameObject);
+
             }
 
         }

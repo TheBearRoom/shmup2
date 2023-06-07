@@ -1,0 +1,1 @@
+Om fienderna sjukter bullets (röda circlar) orealstiskt snabt så att man inte skulle kunna undvika dem i tid. Sänk då "BulletSpeed" i enemyBullet prefaben i Assets från 5 till 1. Ibland så räknar unity med hastigheten som fienderna hade när de skött bulleten, men sen sluta Unity att göra de, nu gör de inte de alls. Jag vet inte varför!
