@@ -38,10 +38,8 @@ public class levelChanger : MonoBehaviour
     {
         if (StartNextLevel)
         {
-            Debug.Log("start next");
             if (loadingTime <= 0) //ticka ner loading time
             {
-                Debug.Log("time");
                 currentLevel++; //hoppa till nästa i levels index
                 if (currentLevel <= levels.Length)
                 {
@@ -70,13 +68,11 @@ public class levelChanger : MonoBehaviour
 
     public void addEnemie()
     {
-        Debug.Log("addEnemie");
         N_Enemies++;  //för varje object som har addEnemie, N_Enemies++
     }
 
     public void removeEnemie()
     {
-        Debug.Log("removeEnemie");
         N_Enemies--;
         if (N_Enemies <= 0) //när  N_Enemies = 0 då är det dacks att byta level
         {

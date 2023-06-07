@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e6e3eb090fb3a40ababaf4e7c69851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunLevelRequierment: 0
   bullet: {fileID: 6022752302444812972, guid: 81248d82a3f2fc340a492bbd16dcc718, type: 3}
   autoshoot: 1
   firingSpeed: 0.8
@@ -177,4 +178,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawned: 0
+  health: 2
   scoreWorth: 100

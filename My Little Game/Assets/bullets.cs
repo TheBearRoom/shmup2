@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bullet_class : MonoBehaviour
 {
-    public float bullet_speed = 1;
+    public float bullet_speed = 5;
     public Vector2 direction = new Vector2(1, 0); //förflyta i Y led
     public Vector2 velocity;
     public bool enemyBullet = false;

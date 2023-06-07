@@ -7,6 +7,7 @@ using UnityEngine;
 public class destructable : MonoBehaviour
 {
     public bool spawned = false;
+    public int health = 1;
     public int scoreWorth = 10; //defult värde för hur mycket score en fiende med
 
 
@@ -30,9 +31,9 @@ public class destructable : MonoBehaviour
 
             if (!bullet.enemyBullet) //är det det en playerbullet?
             {
+                Destroy(bullet.gameObject);
                 levelChanger.instance.increaseScore(scoreWorth); //skicka min score till LevelChanger
                 Destroy(gameObject);
-                Destroy(bullet.gameObject);
             }
 
         }
